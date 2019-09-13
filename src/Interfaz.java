@@ -35,7 +35,7 @@ public class Interfaz extends JFrame implements ActionListener {
         tfIngresar = new JTextField();
         tfIngresar.setPreferredSize(new Dimension(250, 50));
         lblSize = new JLabel("Numero de ciudades");
-        lblSize.setPreferredSize(new Dimension(50, 50));
+        lblSize.setPreferredSize(new Dimension(150, 100));
         btnGene = new JButton("Generar");
         btnGene.setPreferredSize(new Dimension(100, 50));
         btnGene.addActionListener(this);
@@ -82,15 +82,29 @@ public class Interfaz extends JFrame implements ActionListener {
         if (aux > 0) {
             areaCentro.setLayout(new GridLayout(aux, aux, 0, 4));
             for (int i = 0; i < aux; i++) {
-                for (int j = 0; j < aux; j++) {
-                    JLabel lblX = new JLabel("X" + (j + 1));
-                    lblX.setHorizontalAlignment(SwingConstants.CENTER);
+//                for (int j = 0; j < aux; j++) {
+                    JLabel lblOrigen = new JLabel("Origen: ");
+                    lblOrigen.setHorizontalAlignment(SwingConstants.CENTER);
                     JTextField tfPeso = new JTextField(5);
                     tfPeso.setHorizontalAlignment(SwingConstants.LEFT);
-                    areaCentro.add(lblX);
+                    areaCentro.add(lblOrigen);
                     areaCentro.add(tfPeso);
                     arr.add(tfPeso);
-                }
+                    JLabel lblDestino = new JLabel("Destino: ");
+                    lblDestino.setHorizontalAlignment(SwingConstants.CENTER);
+                    tfPeso = new JTextField(5);
+                    tfPeso.setHorizontalAlignment(SwingConstants.LEFT);
+                    areaCentro.add(lblDestino);
+                    areaCentro.add(tfPeso);
+                    arr.add(tfPeso);
+                    JLabel lblDistancia = new JLabel("Distancia: ");
+                    lblDistancia.setHorizontalAlignment(SwingConstants.CENTER);
+                    tfPeso = new JTextField(5);
+                    tfPeso.setHorizontalAlignment(SwingConstants.LEFT);
+                    areaCentro.add(lblDistancia);
+                    areaCentro.add(tfPeso);
+                    arr.add(tfPeso);
+//                }
             }
         } else {
             JOptionPane.showMessageDialog(this, "solo puedes ingresar numeros positivos");
