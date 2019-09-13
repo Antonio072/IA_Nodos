@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9c7d131-617d-4a16-b52b-55c1437ee30b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/archivoIndice" beforeDir="false" afterPath="$PROJECT_DIR$/archivoIndice" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/archivoMaestro" beforeDir="false" afterPath="$PROJECT_DIR$/archivoMaestro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tablero/Interfaz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tablero/Interfaz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tablero/Matriz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tablero/Matriz.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Matriz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matriz.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

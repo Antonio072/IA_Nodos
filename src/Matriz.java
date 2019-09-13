@@ -25,12 +25,12 @@ public class Matriz {
         System.out.println("archivo indice");
         RandomAccessFile archivoIndice = new RandomAccessFile("archivoIndice", "rw");
         for (int i = 0; i < ren; i++) {
-            m+=  matriz[i][0];
-            m+= " : " + matriz[i][1];
-            m+= " , " + matriz[i][2];
-            // for (int j = 0; j < col; j++) {
-            //     m = m + " " + matriz[i][j];
-            // }
+//            m+=  matriz[i][0];
+//            m+= " : " + matriz[i][1];
+//            m+= " , " + matriz[i][2];
+             for (int j = 0; j < col; j++) {
+                 m = m + " " + matriz[i][j];
+             }
             m = m + "\n";
         }
         buffer = new StringBuffer(m);
@@ -40,6 +40,7 @@ public class Matriz {
 
     public void leer() throws IOException {
         long actual, apfinal;
+        System.out.println("---- Archivo indice -----");
         RandomAccessFile archivo = new RandomAccessFile("archivoIndice", "r");
         while ((actual = archivo.getFilePointer()) != (apfinal = archivo.length())) {
             System.out.print(archivo.readChar());

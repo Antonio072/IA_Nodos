@@ -83,6 +83,9 @@ public class Interfaz extends JFrame implements ActionListener {
             areaCentro.setLayout(new GridLayout(aux, aux, 0, 4));
             for (int i = 0; i < aux; i++) {
 //                for (int j = 0; j < aux; j++) {
+                /*
+                Origen
+                 */
                     JLabel lblOrigen = new JLabel("Origen: ");
                     lblOrigen.setHorizontalAlignment(SwingConstants.CENTER);
                     JTextField tfPeso = new JTextField(5);
@@ -90,6 +93,9 @@ public class Interfaz extends JFrame implements ActionListener {
                     areaCentro.add(lblOrigen);
                     areaCentro.add(tfPeso);
                     arr.add(tfPeso);
+                /*
+                Destino
+                 */
                     JLabel lblDestino = new JLabel("Destino: ");
                     lblDestino.setHorizontalAlignment(SwingConstants.CENTER);
                     tfPeso = new JTextField(5);
@@ -97,6 +103,9 @@ public class Interfaz extends JFrame implements ActionListener {
                     areaCentro.add(lblDestino);
                     areaCentro.add(tfPeso);
                     arr.add(tfPeso);
+                /*
+                Distancia
+                 */
                     JLabel lblDistancia = new JLabel("Distancia: ");
                     lblDistancia.setHorizontalAlignment(SwingConstants.CENTER);
                     tfPeso = new JTextField(5);
@@ -131,7 +140,9 @@ public class Interfaz extends JFrame implements ActionListener {
         for (int p = 0; p < aux; p++) {
             for (int q = 0; q < aux; q++) {
                 try {
-                    matriz[p][q] = Double.valueOf(texts.get(o));
+
+                    System.out.println(matriz[p][2]);
+                    matriz[p][2] = Double.valueOf(texts.get(o));
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(this, "solo puedes ingresar valores numericos");
                 }
