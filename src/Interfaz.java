@@ -18,7 +18,7 @@ public class Interfaz extends JFrame implements ActionListener {
     Container container;
     ArrayList arr;
     ArrayList<String> texts;
-    double[][] matriz;
+    Filas[] matriz;
     int aux = 0;
     Matriz m;
 
@@ -80,41 +80,41 @@ public class Interfaz extends JFrame implements ActionListener {
     private void generarInterfazMatriz() {
         aux = Integer.parseInt(tfIngresar.getText());
         if (aux > 0) {
-            areaCentro.setLayout(new GridLayout(aux, aux, 0, 4));
+            areaCentro.setLayout(new GridLayout(aux, 1, 0, 4));
             for (int i = 0; i < aux; i++) {
-//                for (int j = 0; j < aux; j++) {
+//               for (int j = 0; j < aux; j++) {
                 /*
                 Origen
                  */
                     JLabel lblOrigen = new JLabel("Origen: ");
                     lblOrigen.setHorizontalAlignment(SwingConstants.CENTER);
-                    JTextField tfPeso = new JTextField(5);
-                    tfPeso.setHorizontalAlignment(SwingConstants.LEFT);
+                    JTextField tfOrigen = new JTextField(5);
+                    tfOrigen.setHorizontalAlignment(SwingConstants.LEFT);
                     areaCentro.add(lblOrigen);
-                    areaCentro.add(tfPeso);
-                    arr.add(tfPeso);
+                    areaCentro.add(tfOrigen);
+                    arr.add(tfOrigen);
                 /*
                 Destino
                  */
                     JLabel lblDestino = new JLabel("Destino: ");
                     lblDestino.setHorizontalAlignment(SwingConstants.CENTER);
-                    tfPeso = new JTextField(5);
-                    tfPeso.setHorizontalAlignment(SwingConstants.LEFT);
+                    JTextField tfDestino = new JTextField(5);
+                    tfDestino.setHorizontalAlignment(SwingConstants.LEFT);
                     areaCentro.add(lblDestino);
-                    areaCentro.add(tfPeso);
-                    arr.add(tfPeso);
+                    areaCentro.add(tfDestino);
+                    arr.add(tfDestino);
                 /*
                 Distancia
                  */
                     JLabel lblDistancia = new JLabel("Distancia: ");
                     lblDistancia.setHorizontalAlignment(SwingConstants.CENTER);
-                    tfPeso = new JTextField(5);
+                    JTextField tfPeso = new JTextField(5);
                     tfPeso.setHorizontalAlignment(SwingConstants.LEFT);
                     areaCentro.add(lblDistancia);
                     areaCentro.add(tfPeso);
                     arr.add(tfPeso);
-//                }
-            }
+                }
+//            }
         } else {
             JOptionPane.showMessageDialog(this, "solo puedes ingresar numeros positivos");
         }
@@ -129,25 +129,28 @@ public class Interfaz extends JFrame implements ActionListener {
 
     private void recuperarDatosInterfazMatriz() {
 
-        matriz = new double[aux][aux];
         for (Object textField : arr) {
             texts.add(((JTextField) textField).getText());
         }
     }
 
     private void llenarMatriz() {
+        matriz = new Filas[aux];
         int o = 0;
         for (int p = 0; p < aux; p++) {
-            for (int q = 0; q < aux; q++) {
-                try {
-
-                    System.out.println(matriz[p][2]);
-                    matriz[p][2] = Double.valueOf(texts.get(o));
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(this, "solo puedes ingresar valores numericos");
-                }
-                o++;
+            Filas f = new Filas();
+            f.setOrigen(texts.get(o));
+            o++;
+            f.setDestino(texts.get(o));
+            o++;
+            try{
+                f.setPeso(Double.valueOf(texts.get(o)));
+            }catch (Exception e){
+                f.setPeso(0.0);
+                JOptionPane.showMessageDialog(this,"La distancia debe ser un numero real");
             }
+            o++;
+            matriz[p] = f;
         }
     }
 

@@ -1,6 +1,6 @@
 import java.io.IOException;
 /** @author JRdz **/
-public class Nodos {
+public class Main {
 
     public static void main(String[] args) throws IOException {
         Interfaz inter = new Interfaz();

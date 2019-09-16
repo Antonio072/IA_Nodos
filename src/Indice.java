@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Indice {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         int llave;
         int pos;
 
@@ -20,5 +20,5 @@ public class Indice {
                     System.out.println("La posicion es" +pos);
             }while (llave!=0);
         }
-    }
+    }*/
 }
